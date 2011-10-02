@@ -1,20 +1,12 @@
 package se.veide.projecteuler
 
-import scala.collection.mutable.Map
+import Util.memo
 
 object Problem2 {
   val fib: (Int => Int) = memo {
     case 0 => 0
     case 1 => 1
     case n => fib(n - 1) + fib(n - 2)
-  }
-
-  def memo(f: Int => Int) = {
-    val map = Map[Int, Int]()
-    (i: Int) => map get i match {
-      case Some(res) => res
-      case None => val res = f(i); map += i -> res; res
-    }
   }
 
   def main(args: Array[String]): Unit = {
