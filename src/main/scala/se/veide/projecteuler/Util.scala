@@ -12,7 +12,6 @@ object Util {
     }
   }
 
-  @tailrec
   val getPrimeFactors: (Long) => List[Long] = memo { i =>
     val half = i / 2
     var n = 2
